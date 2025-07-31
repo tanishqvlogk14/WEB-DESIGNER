@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webtanix | Professional Web Design Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        
+        .nav-link:hover {
+            color: #38bdf8;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .project-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .project-overlay {
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-slate-900/80 backdrop-blur-md z-50 border-b border-slate-800">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold gradient-text">Webtanix</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#work" class="nav-link">Work</a>
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-16 md:pt-40 md:pb-24 px-6" style="background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://placehold.co/1920x1080') no-repeat center center/cover;">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    Professional <span class="gradient-text">Web Design</span> 
+                    <br>That Converts
+                </h1>
+                <p class="text-lg text-slate-300 mb-8 max-w-lg">
+                    Creating stunning, high-performance websites that drive results for businesses and individuals. Let's build something amazing together.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full font-medium hover:opacity-90 transition">Get Started</a>
+                    <a href="#work" class="px-8 py-3 border border-slate-600 rounded-full font-medium hover:bg-slate-800 transition">View Work</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-full max-w-md">
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-blue-500 rounded-lg opacity-20 animate-pulse"></div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-indigo-500 rounded-lg opacity-20 animate-pulse delay-300"></div>
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a1e39847-cdef-469c-8938-cd868df15728.png" alt="Professional web designer working on modern website design with multiple screens showing design process" class="relative rounded-xl shadow-2xl w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 px-6 bg-slate-900/50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">My <span class="gradient-text">Services</span></h2>
+                <p class="text-slate-300 max-w-2xl mx-auto">Comprehensive web solutions tailored to your business needs</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-slate-800 rounded-lg flex items-center justify-center mb-6 text-blue-400 text-2xl">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Web Design</h3>
+                    <p class="text-slate-300 mb-4">Custom, responsive websites designed to engage visitors and reflect your brand perfectly.</p>
+                    <ul class="space-y-2 text-slate-400">
+                        <li class="flex items-start"><i class="fas fa-check text-blue-400 mr-2 mt-1"></i> <span>Responsive Design</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-blue-400 mr-2 mt-1"></i> <span>UI/UX Focused</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-blue-400 mr-2 mt-1"></i> <span>Modern Aesthetics</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-slate-800 rounded-lg flex items-center justify-center mb-6 text-indigo-400 text-2xl">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Web Development</h3>
+                    <p class="text-slate-300 mb-4">Clean, efficient code that powers your website with speed and reliability.</p>
+                    <ul class="space-y-2 text-slate-400">
+                        <li class="flex items-start"><i class="fas fa-check text-indigo-400 mr-2 mt-1"></i> <span>Frontend Development</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-indigo-400 mr-2 mt-1"></i> <span>Backend Integration</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-indigo-400 mr-2 mt-1"></i> <span>Performance Optimized</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-slate-800 rounded-lg flex items-center justify-center mb-6 text-cyan-400 text-2xl">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Mobile-First</h3>
+                    <p class="text-slate-300 mb-4">Websites built with mobile users in mind, ensuring perfect performance on all devices.</p>
+                    <ul class="space-y-2 text-slate-400">
+                        <li class="flex items-start"><i class="fas fa-check text-cyan-400 mr-2 mt-1"></i> <span>Responsive Layouts</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-cyan-400 mr-2 mt-1"></i> <span>Touch Optimization</span></li>
+                        <li class="flex items-start"><i class="fas fa-check text-cyan-400 mr-2 mt-1"></i> <span>Fast Loading</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="py-16 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured <span class="gradient-text">Work</span></h2>
+                <p class="text-slate-300 max-w-2xl mx-auto">A selection of our recent web design and development projects</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="project-card rounded-xl overflow-hidden relative">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/67ee61c1-f40b-4852-9f66-e202d00a6436.png" alt="Modern e-commerce website design with clean product showcase and intuitive navigation" class="w-full h-full object-cover">
+                    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold mb-2">E-Commerce Store</h3>
+                        <p class="text-slate-300 mb-4">A modern online store with seamless shopping experience</p>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 font-medium">View Case Study →</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card rounded-xl overflow-hidden relative">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1c0de176-f609-45ab-8bdf-ee8c81220e94.png" alt="Corporate website with professional layout for financial services company" class="w-full h-full object-cover">
+                    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold mb-2">Finance Dashboard</h3>
+                        <p class="text-slate-300 mb-4">Interactive financial dashboard with data visualization</p>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 font-medium">View Case Study →</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card rounded-xl overflow-hidden relative">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2c9f41c9-fd2b-42c9-8ae8-7ead28503685.png" alt="Creative portfolio website for photographer with full-screen image gallery" class="w-full h-full object-cover">
+                    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold mb-2">Photographer Portfolio</h3>
+                        <p class="text-slate-300 mb-4">Showcase for artistic photography with gallery features</p>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 font-medium">View Case Study →</a>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card rounded-xl overflow-hidden relative">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/20e48520-c2eb-47be-af8c-1568d6b63836.png" alt="SaaS application interface with clean, functional design for task management" class="w-full h-full object-cover">
+                    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold mb-2">SaaS Application</h3>
+                        <p class="text-slate-300 mb-4">Cloud-based productivity tool for teams</p>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 font-medium">View Case Study →</a>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card rounded-xl overflow-hidden relative">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5cbd79eb-ee9c-4f9f-a77b-689ad52541d5.png" alt="Restaurant website with beautiful food photography and online reservation system" class="w-full h-full object-cover">
+                    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold mb-2">Restaurant Website</h3>
+                        <p class="text-slate-300 mb-4">Delicious design for a gourmet dining experience</p>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 font-medium">View Case Study →</a>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card rounded-xl overflow-hidden relative">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cca143e5-f417-4cdf-83e3-ed682f7c5e2f.png" alt="Healthcare provider website with calming color scheme and appointment booking feature" class="w-full h-full object-cover">
+                    <div class="project-overlay absolute inset-0 flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold mb-2">Healthcare Portal</h3>
+                        <p class="text-slate-300 mb-4">Patient-centered healthcare information system</p>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 font-medium">View Case Study →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block px-8 py-3 border border-slate-600 rounded-full font-medium hover:bg-slate-800 transition">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 px-6 bg-slate-900/50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Client <span class="gradient-text">Testimonials</span></h2>
+                <p class="text-slate-300 max-w-2xl mx-auto">What our clients say about working with us</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700">
+                    <div class="flex items-center mb-6">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2fb8c50d-2249-4e22-b4fc-586b07c3c5da.png" alt="Portrait of Sarah Johnson, Marketing Director at TechCorp" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-sm text-slate-400">Marketing Director, TechCorp</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 italic mb-4">
+                        "Webtanix transformed our outdated website into a modern, lead-generating machine. Their attention to detail and understanding of our business needs was exceptional."
+                    </p>
+                    <div class="text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700">
+                    <div class="flex items-center mb-6">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/744a2cc6-14d3-4aca-8540-ec5ee284eae3.png" alt="Portrait of Michael Chen, CEO of StartupX" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <p class="text-sm text-slate-400">CEO, StartupX</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 italic mb-4">
+                        "Working with Webtanix was a game-changer. They delivered our SaaS platform ahead of schedule, and the user feedback has been overwhelmingly positive."
+                    </p>
+                    <div class="text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700">
+                    <div class="flex items-center mb-6">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/95b8630f-81d3-471c-964b-e09a36ec7673.png" alt="Portrait of Emily Rodriguez, Creative Director at DesignHub" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Emily Rodriguez</h4>
+                            <p class="text-sm text-slate-400">Creative Director, DesignHub</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 italic mb-4">
+                        "The portfolio site they created perfectly captures our aesthetic and has significantly increased our client inquiries. Their design sensibility is impeccable."
+                    </p>
+                    <div class="text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-6">
+        <div class="container mx-auto">
+            <div class="max-w-4xl mx-auto bg-slate-800/50 rounded-xl border border-slate-700 p-8 md:p-12">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In <span class="gradient-text">Touch</span></h2>
+                    <p class="text-slate-300">Have a project in mind? Contact us for a free consultation</p>
+                </div>
+                
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white" placeholder="your@email.com">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-slate-300 mb-2">Subject</label>
+                        <input type="text" id="subject" class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white" placeholder="How can we help you?">
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Your Message</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white" placeholder="Tell us about your project..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <button type="submit" class="w-full px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full font-medium hover:opacity-90 transition">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/80 backdrop-blur-md border-t border-slate-800 py-12 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold gradient-text mb-4">Webtanix</div>
+                    <p class="text-slate-400 max-w-md">Creating digital experiences that engage, convert, and delight. Professional web design and development services.</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://instagram.com/webtanix" target="_blank" class="text-slate-400 hover:text-white text-2xl transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-white text-2xl transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-white text-2xl transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-white text-2xl transition">
+                        <i class="fab fa-dribbble"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-500 text-sm mb-4 md:mb-0">© 2023 Webtanix. All rights reserved.</p>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-slate-400 hover:text-white text-sm transition">Privacy Policy</a>
+                    <a href="#" class="text-slate-400 hover:text-white text-sm transition">Terms of Service</a>
+                    <a href="#" class="text-slate-400 hover:text-white text-sm transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality would go here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Simple form submission handling (would be replaced with actual form handling in production)
+            const form = document.querySelector('form');
+            if(form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message! We will get back to you soon.');
+                    form.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
